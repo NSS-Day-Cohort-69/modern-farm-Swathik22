@@ -76,9 +76,8 @@ describe("Sowing the fields with seeds", () => {
     })
 })
 
-describe("Harvesting the grown plants", () => {
+describe("Harvesting the grown plants", () => {   
     let harvestedPlants
-
     beforeAll(() => {
         harvestedPlants = harvestPlants(plantedSeeds)
     })
@@ -125,8 +124,7 @@ describe("Harvesting the grown plants", () => {
     test("Harvested correct number of wheat plants", () => {
         expect(
             harvestedPlants.filter(p => p.type === "Wheat").length
-        )
-            .toEqual(6)
+        ).toEqual(6)
     })
 })
 
