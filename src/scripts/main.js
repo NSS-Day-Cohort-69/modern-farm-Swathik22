@@ -4,39 +4,20 @@ import { plantSeeds } from "./tractor.js";
 import { harvestPlants } from "./harvester.js";
 import { catalog } from "./catalog.js";
 
-// const asparagusSeed = createAsparagus()
-// const cornSeed=createCorn()
-// const potatoSeed=createPotato()
-// const soybeanSeed=createSoybean()
-// const sunflowerSeed=createSunflower()
-// const wheatSeed=createWheat()
+//step -1 Creating an Yearly planting plan and getting seeds
+const yearlyPlan=createPlan();
 
-// console.log(asparagusSeed)
-// console.log(cornSeed)
-// console.log(potatoSeed)
-// console.log(soybeanSeed)
-// console.log(sunflowerSeed)
-// console.log(wheatSeed)
+//step -2 Planting the seeds in the field
+plantSeeds(yearlyPlan)
 
-// addPlant(cornSeed);
+//step -3 Get the harvested food
+const foodList=harvestPlants(usePlants());
 
-//const fieldPlantsAdd=usePlants();
-const yearlyPlan=createPlan();//1-step
+//step -4 Get the harvested food for sale
+let foodReadyForSale=catalog(foodList);
 
-plantSeeds(yearlyPlan)//2-step
-
-const foodList=harvestPlants(usePlants());//3-step
-
-let foodReadyForSale=catalog(foodList);//4-step
-
-
-const foodContainerElement=document.querySelector(".container")//5-step
+//step -5 Throwing on to the browser
+const foodContainerElement=document.querySelector(".container")
 foodContainerElement.innerHTML=foodReadyForSale;
 
-
-// console.log("Welcome to the main module")
-// console.log(yearlyPlan)
-
-
-// console.log(fieldPlantsAdd)
 
